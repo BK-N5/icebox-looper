@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Icebox Looper</title>
+
+  <!-- Intro styles -->
+  <link rel="stylesheet" href="intro/intro.css">
+
+  <!-- Looper styles -->
+  <link rel="stylesheet" href="looper/styles.css">
+</head>
+
+<body>
+
+  <!-- INTRO EXPERIENCE -->
+  <div id="introContainer">
+    <div id="storeScene">
+      <img src="intro/store-scene.png" id="storeBg">
+      <div id="iceChestClickable">
+        <img src="intro/ice-chest-top.png" id="chestTop">
+      </div>
+    </div>
+
+    <div id="topDownChest" class="hidden">
+      <img src="intro/ice-chest-lid.png" id="chestLid">
+      <img src="intro/ice-chest-lever.svg" id="chestLever">
+    </div>
+  </div>
+
+  <!-- LOOPER INTERIOR (hidden until intro finishes) -->
+  <div id="iceboxInterior" class="hidden">
+    <div id="frostFrame"></div>
+    <div id="looperRoot">
+
+      <div class="top-controls">
+        <label>
+          Loop length (seconds):
+          <input type="number" id="loopLengthInput" value="4" min="0.5" step="0.1">
+        </label>
+      </div>
+
+      <div class="tracks">
+
+        <!-- TRACK TEMPLATE (6 tracks) -->
+        <!-- Track 0 -->
+        <div class="track" data-index="0" style="--track-color:#4caf50">
+          <svg class="track-circle" viewBox="0 0 100 100">
+            <circle class="outer-ring" cx="50" cy="50" r="45" />
+            <path class="loop-arc" />
+            <circle class="middle-ring" cx="50" cy="50" r="34" />
+            <circle class="record-btn" cx="50" cy="50" r="20" />
+          </svg>
+          <div class="track-status">Empty</div>
+          <div class="track-controls">
+            <button class="clear-btn">Clear</button>
+            <label class="vol-label">
+              Vol
+              <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1">
+            </label>
+          </div>
+        </div>
+
+        <!-- Track 1 -->
+        <div class="track" data-index="1" style="--track-color:#ff9800">
+          <svg class="track-circle" viewBox="0 0 100 100">
+            <circle class="outer-ring" cx="50" cy="50" r="45" />
+            <path class="loop-arc" />
+            <circle class="middle-ring" cx="50" cy="50" r="34" />
+            <circle class="record-btn" cx="50" cy="50" r="20" />
+          </svg>
+          <div class="track-status">Empty</div>
+          <div class="track-controls">
+            <button class="clear-btn">Clear</button>
+            <label class="vol-label">Vol <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1"></label>
+          </div>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="track" data-index="2" style="--track-color:#f44336">
+          <svg class="track-circle" viewBox="0 0 100 100">
+            <circle class="outer-ring" cx="50" cy="50" r="45" />
+            <path class="loop-arc" />
+            <circle class="middle-ring" cx="50" cy="50" r="34" />
+            <circle class="record-btn" cx="50" cy="50" r="20" />
+          </svg>
+          <div class="track-status">Empty</div>
+          <div class="track-controls">
+            <button class="clear-btn">Clear</button>
+            <label class="vol-label">Vol <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1"></label>
+          </div>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="track" data-index="3" style="--track-color:#2196f3">
+          <svg class="track-circle" viewBox="0 0 100 100">
+            <circle class="outer-ring" cx="50" cy="50" r="45" />
+            <path class="loop-arc" />
+            <circle class="middle-ring" cx="50" cy="50" r="34" />
+            <circle class="record-btn" cx="50" cy="50" r="20" />
+          </svg>
+          <div class="track-status">Empty</div>
+          <div class="track-controls">
+            <button class="clear-btn">Clear</button>
+            <label class="vol-label">Vol <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1"></label>
+          </div>
+        </div>
+
+        <!-- Track 4 -->
+        <div class="track" data-index="4" style="--track-color:#9c27b0">
+          <svg class="track-circle" viewBox="0 0 100 100">
+            <circle class="outer-ring" cx="50" cy="50" r="45" />
+            <path class="loop-arc" />
+            <circle class="middle-ring" cx="50" cy="50" r="34" />
+            <circle class="record-btn" cx="50" cy="50" r="20" />
+          </svg>
+          <div class="track-status">Empty</div>
+          <div class="track-controls">
+            <button class="clear-btn">Clear</button>
+            <label class="vol-label">Vol <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1"></label>
+          </div>
+        </div>
+
+        <!-- Track 5 -->
+        <div class="track" data-index="5" style="--track-color:#00bcd4">
+          <svg class="track-circle" viewBox="0 0 100 100">
+            <circle class="outer-ring" cx="50" cy="50" r="45" />
+            <path class="loop-arc" />
+            <circle class="middle-ring" cx="50" cy="50" r="34" />
+            <circle class="record-btn" cx="50" cy="50" r="20" />
+          </svg>
+          <div class="track-status">Empty</div>
+          <div class="track-controls">
+            <button class="clear-btn">Clear</button>
+            <label class="vol-label">Vol <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1"></label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Looper logic (must load first) -->
+  <script src="looper/app.js"></script>
+
+  <!-- Intro logic (depends on app.js functions) -->
+  <script src="intro/intro.js"></script>
+
+</body>
+</html>
