@@ -76,6 +76,7 @@
   bottom: 180px;
   cursor: pointer;
   transition: transform 0.2s ease;
+  z-index: 300;
 }
 
 #chestLever.pulled {
