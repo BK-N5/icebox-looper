@@ -51,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000000;
+  background: #transparent;
   transition: opacity 0.6s ease;
   z-index: 100;
 }
@@ -79,7 +79,8 @@
 
 #frostFrame { 
     position: absolute; 
-    inset: 0; 
+    min-width: 100vh;
+    min-height: 80vh;
     background-image: url('./ice-chest-interior.png'); 
     background-size: cover; 
     background-position: center;
