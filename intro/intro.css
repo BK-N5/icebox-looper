@@ -68,19 +68,7 @@
   transition: transform 0.8s cubic-bezier(.25,.8,.25,1);
   position: absolute;
   z-index: 200;
-}
-
-#chestLever {
-  width: 120px;
-  position: absolute;
-  bottom: 180px;
   cursor: pointer;
-  transition: transform 0.2s ease;
-  z-index: 300;
-}
-
-#chestLever.pulled {
-  transform: translateY(20px);
 }
 
 #chestLid.open {
@@ -105,15 +93,16 @@
 }
 
 #iceboxInterior {
-  position: absolute; /* changed from relative */
+  position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 100vh;
   min-height: 80vh;
-  z-index: 50; /* under lid */
-  opacity: 1; /* always visible */
+  z-index: 50;
+  opacity: 1;
+  pointer-events: none;
 }
 
 #frostCloud {
@@ -121,13 +110,13 @@
   bottom: 40%;
   width: 200px;
   height: 200px;
-  background-image: url('./frost-cloud.png'); /* or SVG */
+  background-image: url('./frost-cloud.png');
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0;
   transform: scale(0.8);
   transition: opacity 0.4s ease, transform 0.6s ease;
-  z-index: 150; /* between lid + interior */
+  z-index: 150; 
 }
 
 #frostCloud.active {

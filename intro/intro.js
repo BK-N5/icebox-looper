@@ -41,25 +41,21 @@ document.getElementById("iceChestClickable").addEventListener("click", () => {
 
 
 // 2. Pull lever → open lid → reveal looper
-document.getElementById("chestLever").addEventListener("click", () => {
-  const lever = document.getElementById("chestLever");
+document.getElementById("chestLid").addEventListener("click", () => {
   const lid = document.getElementById("chestLid");
   const frost = document.getElementById("frostCloud");
 
-  lever.classList.add("pulled");
+  lid.classList.add("open");
+  frost.classList.add("active");
 
-  setTimeout(() => {
-    lid.classList.add("open");
-    frost.classList.add("active"); // frost puff
-  }, 150);
+  // Start looper visuals
+  requestAnimationFrame(updateVisuals);
 
-  // fade out intro container AFTER lid opens
+  // Fade out intro container
   setTimeout(() => {
-    requestAnimationFrame(updateVisuals);
     document.getElementById("introContainer").style.opacity = 0;
-
     setTimeout(() => {
       document.getElementById("introContainer").style.display = "none";
     }, 600);
-  }, 1500);
+  }, 900);
 });
