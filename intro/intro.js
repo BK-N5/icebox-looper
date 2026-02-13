@@ -27,10 +27,10 @@ document.getElementById("iceChestClickable").addEventListener("click", () => {
         // Now run your animation sequence
         console.log("Chest clicked — animation should start now");
         document.getElementById("storeScene").style.opacity = 0;
+        document.getElementById("topDownChest").classList.remove("hidden");
 
         setTimeout(() => {
           document.getElementById("storeScene").style.display = "none";
-          document.getElementById("topDownChest").classList.remove("hidden");
         }, 600);
       });
     })
