@@ -15,7 +15,7 @@
   position: relative;
   width: 80%;
   height: 80%;
-  background: radial-gradient(circle at 50% 70%, #000000, #000000);
+  background: transparent;
 }
 
 #storeBg {
