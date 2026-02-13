@@ -110,7 +110,7 @@
   bottom: 40%;
   width: 200px;
   height: 200px;
-  background-image: url('./frost-cloud.png');
+  background-image: url('intro/frost-cloud.png');
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0;
